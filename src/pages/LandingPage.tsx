@@ -100,9 +100,11 @@ export default function LandingPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button variant="hero" size="xl" className="min-w-[200px]">
-                <Play className="h-5 w-5 mr-2" />
-                Start Free Trial
+              <Button variant="hero" size="xl" className="min-w-[200px]" asChild>
+                <Link to="/auth?mode=signup">
+                  <Play className="h-5 w-5 mr-2" />
+                  Start Free Trial
+                </Link>
               </Button>
               <Button variant="outline" size="xl" className="min-w-[200px]">
                 <Volume2 className="h-5 w-5 mr-2" />
@@ -214,12 +216,14 @@ export default function LandingPage() {
             for their voice AI needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="xl" className="min-w-[200px]">
-              Start Free Trial
-              <ArrowRight className="h-5 w-5 ml-2" />
+            <Button variant="secondary" size="xl" className="min-w-[200px]" asChild>
+              <Link to="/auth?mode=signup">
+                Start Free Trial
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Link>
             </Button>
-            <Button variant="outline" size="xl" className="min-w-[200px] border-white/20 text-white hover:bg-white/10">
-              <Link to="/pricing" className="flex items-center">
+            <Button variant="outline" size="xl" className="min-w-[200px] border-white/20 text-white hover:bg-white/10" asChild>
+              <Link to="/pricing">
                 View Pricing
               </Link>
             </Button>

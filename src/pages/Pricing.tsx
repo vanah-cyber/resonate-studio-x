@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Zap, Crown, Building2, Sparkles } from "lucide-react";
 import { Header } from "@/components/Header";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const plans = [
   {
@@ -147,8 +148,11 @@ export default function Pricing() {
                     variant={plan.buttonVariant}
                     className="w-full"
                     size="lg"
+                    asChild
                   >
-                    {plan.buttonText}
+                    <Link to={plan.name === "Free" ? "/auth?mode=signup" : "/auth?mode=signup"}>
+                      {plan.buttonText}
+                    </Link>
                   </Button>
                 </CardFooter>
               </Card>
@@ -168,11 +172,11 @@ export default function Pricing() {
                     </p>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button variant="outline" size="lg">
-                      Contact Sales
+                    <Button variant="outline" size="lg" asChild>
+                      <Link to="/auth">Contact Sales</Link>
                     </Button>
-                    <Button variant="hero" size="lg">
-                      Get Custom Quote
+                    <Button variant="hero" size="lg" asChild>
+                      <Link to="/auth?mode=signup">Get Custom Quote</Link>
                     </Button>
                   </div>
                 </div>
