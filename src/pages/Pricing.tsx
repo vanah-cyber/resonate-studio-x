@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { Check, Zap, Crown, Building2, Sparkles } from "lucide-react";
 import { Header } from "@/components/Header";
+import { cn } from "@/lib/utils";
 
 const plans = [
   {
@@ -182,8 +183,4 @@ export default function Pricing() {
       </section>
     </div>
   );
-}
-
-function cn(...classes: (string | undefined)[]) {
-  return classes.filter(Boolean).join(' ');
 }
